@@ -507,7 +507,7 @@ bool venc_dev::handle_extradata(void *buffer, int index)
             extradata_info.uaddr + index * extradata_info.buffer_size);
 
         switch (p_extradata->type) {
-            case EXTRADATA_METADATA_MBI:
+            case MSM_VIDC_EXTRADATA_METADATA_MBI:
             {
                 OMX_U32 payloadSize = append_mbi_extradata(&p_extra->data, p_extradata);
                 p_extra->nSize = ALIGN(sizeof(OMX_OTHER_EXTRADATATYPE) + payloadSize, 4);
@@ -517,7 +517,7 @@ bool venc_dev::handle_extradata(void *buffer, int index)
                 p_extra->nDataSize = payloadSize;
                 break;
             }
-            case EXTRADATA_NONE:
+            case MSM_VIDC_EXTRADATA_NONE:
                 p_extra->nSize = ALIGN(sizeof(OMX_OTHER_EXTRADATATYPE), 4);
                 p_extra->nVersion.nVersion = OMX_SPEC_VERSION;
                 p_extra->nPortIndex = OMX_DirOutput;
@@ -532,7 +532,7 @@ bool venc_dev::handle_extradata(void *buffer, int index)
         }
 
         p_extra = (OMX_OTHER_EXTRADATATYPE *)(((char *)p_extra) + p_extra->nSize);
-    } while (p_extradata->type != EXTRADATA_NONE);
+    } while (p_extradata->type != MSM_VIDC_EXTRADATA_NONE);
 
     /* Just for debugging: Traverse the list of extra datas  and spit it out onto log */
     p_extra = (OMX_OTHER_EXTRADATATYPE *)ALIGN(p_bufhdr->pBuffer +

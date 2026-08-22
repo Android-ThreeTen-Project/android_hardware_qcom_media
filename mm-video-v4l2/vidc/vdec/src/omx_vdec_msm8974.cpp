@@ -8755,7 +8755,7 @@ void omx_vdec::handle_extradata(OMX_BUFFERHEADERTYPE *p_buf_hdr)
                         m_disp_vert_size = seqdisp_payload->disp_height;
                     }
                     break;
-                case EXTRADATA_S3D_FRAME_PACKING:
+                case MSM_VIDC_EXTRADATA_S3D_FRAME_PACKING:
                     struct msm_vidc_s3d_frame_packing_payload *s3d_frame_packing_payload;
                     s3d_frame_packing_payload = (struct msm_vidc_s3d_frame_packing_payload *)data->data;
                     if (client_extradata & OMX_FRAMEPACK_EXTRADATA) {
@@ -8763,7 +8763,7 @@ void omx_vdec::handle_extradata(OMX_BUFFERHEADERTYPE *p_buf_hdr)
                         p_extra = (OMX_OTHER_EXTRADATATYPE *) (((OMX_U8 *) p_extra) + p_extra->nSize);
                     }
                     break;
-                case EXTRADATA_FRAME_QP:
+                case MSM_VIDC_EXTRADATA_FRAME_QP:
                     struct msm_vidc_frame_qp_payload *qp_payload;
                     qp_payload = (struct msm_vidc_frame_qp_payload*)data->data;
                     if (client_extradata & OMX_QP_EXTRADATA) {
@@ -8771,7 +8771,7 @@ void omx_vdec::handle_extradata(OMX_BUFFERHEADERTYPE *p_buf_hdr)
                         p_extra = (OMX_OTHER_EXTRADATATYPE *) (((OMX_U8 *) p_extra) + p_extra->nSize);
                     }
                     break;
-                case EXTRADATA_FRAME_BITS_INFO:
+                case MSM_VIDC_EXTRADATA_FRAME_BITS_INFO:
                     struct msm_vidc_frame_bits_info_payload *bits_info_payload;
                     bits_info_payload = (struct msm_vidc_frame_bits_info_payload*)data->data;
                     if (client_extradata & OMX_BITSINFO_EXTRADATA) {
@@ -8779,7 +8779,7 @@ void omx_vdec::handle_extradata(OMX_BUFFERHEADERTYPE *p_buf_hdr)
                         p_extra = (OMX_OTHER_EXTRADATATYPE *) (((OMX_U8 *) p_extra) + p_extra->nSize);
                     }
                     break;
-                case EXTRADATA_STREAM_USERDATA:
+                case MSM_VIDC_EXTRADATA_STREAM_USERDATA:
                     if (client_extradata & OMX_EXTNUSER_EXTRADATA) {
                         append_user_extradata(p_extra, data);
                         p_extra = (OMX_OTHER_EXTRADATATYPE *) (((OMX_U8 *) p_extra) + p_extra->nSize);
