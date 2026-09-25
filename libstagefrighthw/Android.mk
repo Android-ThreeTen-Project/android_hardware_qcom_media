@@ -34,6 +34,8 @@ LOCAL_C_INCLUDES:= \
         frameworks/native/include/media/openmax \
         frameworks/native/include/media/hardware
 
+LOCAL_HEADER_LIBRARIES := media_plugin_headers libcutils_headers libutils_headers
+
 LOCAL_SHARED_LIBRARIES :=       \
         libutils                \
         libcutils               \
@@ -44,4 +46,3 @@ LOCAL_MODULE := libstagefrighthw
 LOCAL_VENDOR_MODULE := true
 
 include $(BUILD_SHARED_LIBRARY)
-
