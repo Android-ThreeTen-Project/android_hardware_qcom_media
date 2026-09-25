@@ -83,7 +83,7 @@ LOCAL_HEADER_LIBRARIES := display_headers generated_kernel_headers
 
 LOCAL_PRELINK_MODULE      := false
 LOCAL_SHARED_LIBRARIES    := liblog libutils libcutils \
-                             libc2dcolorconvert libdl libgui
+                             libc2dcolorconvert libdl
 LOCAL_STATIC_LIBRARIES    := libOmxVidcCommon
 
 LOCAL_SRC_FILES   := src/omx_video_base.cpp
@@ -112,7 +112,7 @@ LOCAL_HEADER_LIBRARIES := generated_kernel_headers
 
 LOCAL_PRELINK_MODULE      := false
 LOCAL_SHARED_LIBRARIES    := liblog libutils libcutils \
-                             libc2dcolorconvert libdl libgui
+                             libc2dcolorconvert libdl
 LOCAL_SHARED_LIBRARIES    += libMpeg4SwEncoder
 LOCAL_STATIC_LIBRARIES    := libOmxVidcCommon
 
